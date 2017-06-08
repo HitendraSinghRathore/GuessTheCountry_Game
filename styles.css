@@ -1,3 +1,7 @@
+body {
+    background-color: linen;
+}
+
 .flagStyle {
     position: relative;
     left: 42%;
