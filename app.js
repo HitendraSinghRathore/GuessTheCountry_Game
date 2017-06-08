@@ -6,8 +6,10 @@ function flagCtrl() {
 
     flag.flagGen = function() {
         var index = Math.round(Math.random() * (nations.length - 1));
-        var rcode = nations[index]["alpha-2"];
+        var rcode = nations[index]["alpha-2"].toLowerCase();
         flag.code = rcode;
+        flag.correctName = nations[index].name.toLowerCase();
+
     }
 
 }
