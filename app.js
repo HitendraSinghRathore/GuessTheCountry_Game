@@ -16,7 +16,6 @@ function flagCtrl() {
         var optionsArray = [];
         flag.response = "false";
         flag.controlButton = "Next";
-        console.log(flag.correctName);
         optionsArray.push(flag.correctName);
         for (var i = 0; i < 3; i++) {
             var choice = Math.round(Math.random() * (nations.length - 1));
