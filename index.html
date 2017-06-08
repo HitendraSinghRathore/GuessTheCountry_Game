@@ -9,19 +9,21 @@
 </head>
 
 <body ng-app="FlagGame" ng-controller="flagCtrl as flag">
-    <h1 style="position: relative; left: 45% ; font-family: Arial, Helvetica, sans-serif"> Guess the Flag!! </h1>
+    <h1 style="position: relative; left: 42% ; font-family: Arial, Helvetica, sans-serif"> Guess the Flag!! </h1>
     <span class="flag-icon flag-icon-{{flag.code}} flagStyle"></span>
     </br>
-    <button class="controlButton" ng-click="flag.flagGen()">Fire</button>
+    <button class="controlButton" ng-click="flag.flagGen()">{{flag.controlButton}}</button>
     <div ng-if="flag.buttonText1">
-        <span style="position: relative; left: 48%;font-size: 1.5em;font-family: Arial, Helvetica, sans-serif"> Options</span></br>
+        <span style="position: relative; left: 47%;font-size: 1.5em;font-family: Arial, Helvetica, sans-serif"> Options</span></br>
         <button class="optionButton" ng-click="flag.button1() ">   {{flag.buttonText1}} </button>
         <button class="optionButton" ng-click="flag.button2()">{{flag.buttonText2}}</button>
         </br>
         <button class="optionButton" ng-click="flag.button3()">{{flag.buttonText3}}</button>
         <button class="optionButton" ng-click="flag.button4()">{{flag.buttonText4}}</button>
     </div>
-    <h2 ng-if="flag.view==true">Correct answer</h2>
+    <h2 ng-if="flag.response==true">Correct answer</h2>
+    <div class="scores">
+        <p>Your score: {{flag.score}} High Score :{{flag.highScore}}</div>
 </body>
 
 </html>
