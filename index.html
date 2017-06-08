@@ -12,11 +12,12 @@
     <span class="flag-icon flag-icon-{{flag.code}}"></span>
     <div ng-if="flag.buttonText1">
         Options
-        <button>   {{flag.buttonText1}} </button>
-        <button>{{flag.buttonText2}}</button>
-        <button>{{flag.buttonText3}}</button>
-        <button>{{flag.buttonText4}}</button>
+        <button ng-click="flag.button1()">   {{flag.buttonText1}} </button>
+        <button ng-click="flag.button2()">{{flag.buttonText2}}</button>
+        <button ng-click="flag.button3()">{{flag.buttonText3}}</button>
+        <button ng-click="flag.button4()">{{flag.buttonText4}}</button>
     </div>
+    <h1 ng-if="flag.view==true">Correct answer</h1>
 </body>
 
 </html>
