@@ -1,0 +1,20 @@
+{
+  "name": "Quiz",
+  "authors": [
+    "Hitendra <hitendersingh2@gmail.com>"
+  ],
+  "description": "a simple quiz based on angular",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
