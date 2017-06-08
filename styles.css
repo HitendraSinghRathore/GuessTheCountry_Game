@@ -8,7 +8,7 @@
 
 .optionButton {
     border-radius: 2em 2em 2em 2em;
-    box-shadow: 1em 0.6em lightgray;
+    box-shadow: 2px 1px gray;
     margin: 2px auto;
     width: 50em;
     font-weight: bold;
