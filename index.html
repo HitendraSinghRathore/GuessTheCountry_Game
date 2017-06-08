@@ -10,6 +10,11 @@
 <body ng-app="FlagGame" ng-controller="flagCtrl as flag">
     <button ng-click="flag.flagGen()">Fire</button>
     <span class="flag-icon flag-icon-{{flag.code}}"></span>
+    <div ng-if="flag.buttonText1">
+        Options
+        <button>   {{flag.buttonText1}} </button>
+        <button>{{flag.buttonText2}}</button>
+    </div>
 </body>
 
 </html>

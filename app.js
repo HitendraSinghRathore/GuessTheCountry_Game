@@ -9,7 +9,9 @@ function flagCtrl() {
         var rcode = nations[index]["alpha-2"].toLowerCase();
         flag.code = rcode;
         flag.correctName = nations[index].name.toLowerCase();
-
+        var choice = Math.round(Math.random() * (nations.length - 1));
+        flag.buttonText1 = nations[choice].name.toLowerCase();
+        flag.buttonText2 = flag.correctName;
     }
 
 }
