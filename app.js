@@ -9,9 +9,26 @@ function flagCtrl() {
         var rcode = nations[index]["alpha-2"].toLowerCase();
         flag.code = rcode;
         flag.correctName = nations[index].name.toLowerCase();
-        var choice = Math.round(Math.random() * (nations.length - 1));
-        flag.buttonText1 = nations[choice].name.toLowerCase();
-        flag.buttonText2 = flag.correctName;
-    }
+        var optionsArray = [];
+        console.log(flag.correctName);
+        optionsArray.push(flag.correctName);
+        for (var i = 0; i < 3; i++) {
+            var choice = Math.round(Math.random() * (nations.length - 1));
+            if (choice == index)
+                choice = (nations.length % choice) - 3;
+            optionsArray.push(nations[choice].name.toLowerCase());
+        }
+        for (var j = optionsArray.length - 1; j > 0; j--) {
+            var k = Math.floor(Math.random() * (j + 1));
+            var temp = optionsArray[j];
+            optionsArray[j] = optionsArray[k];
+            optionsArray[k] = temp;
+        }
 
+        flag.buttonText1 = optionsArray.pop();
+        flag.buttonText2 = optionsArray.pop();
+        flag.buttonText3 = optionsArray.pop();
+        flag.buttonText4 = optionsArray.pop();
+
+    }
 }
