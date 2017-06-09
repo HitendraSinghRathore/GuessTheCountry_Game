@@ -6,10 +6,11 @@
     <script src="app.js"></script>
     <link rel="stylesheet" href="bower_components/flag-icon-css/css/flag-icon.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 </head>
 
 <body ng-app="FlagGame" ng-controller="flagCtrl as flag">
-    <h1 style="position: relative; left: 42% ; font-family: Arial, Helvetica, sans-serif"> Guess the Flag!! </h1>
+    <h1 style="position: relative; left: 42% ; font-family: Arial, Helvetica, sans-serif; text-decoration-style:solid"> Guess the Flag!! </h1>
     <span class="flag-icon flag-icon-{{flag.code}} flagStyle"></span>
     </br>
     <button class="controlButton" ng-click="flag.flagGen()" ng-if="flag.skipButton==true">{{flag.controlButton}}</button>
@@ -21,7 +22,7 @@
         <button class="optionButton" ng-click="flag.button3()">{{flag.buttonText3}}</button>
         <button class="optionButton" ng-click="flag.button4()">{{flag.buttonText4}}</button>
     </div>
-    <h2 ng-if="flag.response==true">Correct answer</h2>
+    <h2 ng-if="flag.response==true" class=" animated tada" style="left:43%;position: relative">Correct answer</h2>
     <div class="scores">
         <p>Your score: {{flag.score}} High Score :{{flag.highScore}}</div>
 </body>
