@@ -1,30 +1,54 @@
 <html>
 
 <head>
-    <title>Guess The Flag</title>
+    <title> The Flag</title>
     <script src="bower_components/angular/angular.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="bower_components/flag-icon-css/css/flag-icon.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body ng-app="FlagGame" ng-controller="flagCtrl as flag">
-    <h1 style="position: relative; left: 42% ; font-family: Arial, Helvetica, sans-serif; text-decoration-style:solid"> Guess the Flag!! </h1>
-    <span class="flag-icon flag-icon-{{flag.code}} flagStyle"></span>
-    </br>
-    <button class="controlButton" ng-click="flag.flagGen()" ng-if="flag.skipButton==true">{{flag.controlButton}}</button>
-    <div ng-if="flag.buttonText1">
-        <span style="position: relative; left: 47%;font-size: 1.5em;font-family: Arial, Helvetica, sans-serif"> Options</span></br>
-        <button class="optionButton" ng-click="flag.button1() ">   {{flag.buttonText1}} </button>
-        <button class="optionButton" ng-click="flag.button2()">{{flag.buttonText2}}</button>
-        </br>
-        <button class="optionButton" ng-click="flag.button3()">{{flag.buttonText3}}</button>
-        <button class="optionButton" ng-click="flag.button4()">{{flag.buttonText4}}</button>
+    <div class=" row ">
+        <h1 class=" col-xs-12 " style="text-align: center"> Guess the Country!! </h1>
+
+
+
     </div>
-    <h2 ng-if="flag.response==true" class=" animated tada" style="left:43%;position: relative">Correct answer</h2>
-    <div class="scores">
-        <p>Your score: {{flag.score}} High Score :{{flag.highScore}}</div>
+    <div class="row ">
+        <span class="flag-icon flag-icon-{{flag.code}} col-md-offset-3 col-md-6 col-sm-offset-4 col-sm-3  col-xs-12 flagstyle "></span>
+    </div>
+
+    <div ng-if="flag.buttonText1">
+        </br>
+        <span class="row col-xs-12 col-md-12" style="text-align:center; font-size: 1.5em"> Options</span>
+        <div class="row">
+            <button ng-click="flag.check(flag.buttonText1)" class="btn btn-primary col-lg-3 col-xs-12 col-sm-6 col-md-6">   {{flag.buttonText1}} </button>
+            <button ng-click="flag.check(flag.buttonText2)" class="btn btn-primary col-lg-3 col-xs-12 col-sm-6 col-md-6 ">{{flag.buttonText2}}</button>
+
+            <button ng-click="flag.check(flag.buttonText3)" class="btn btn-primary col-lg-3 col-xs-12 col-sm-6 col-md-6">{{flag.buttonText3}}</button>
+            <button ng-click="flag.check(flag.buttonText4)" class="btn btn-primary col-lg-3 col-xs-12 col-sm-6 col-md-6 ">{{flag.buttonText4}}</button>
+        </div>
+    </div>
+    <button ng-click="flag.flagGen()" ng-if="flag.skipButton==true" class="btn btn-success row col-xs-offset-6 btn-lg">{{flag.controlButton}}</button>
+    </br>
+    <div class="alert  alert-success" ng-if="flag.response==true">
+        Congratulations! You got the <strong>Correct Answer</strong>
+    </div>
+    </br>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Your score : {{flag.score}}</h3>
+        </div>
+        <div class="panel-body">
+            High Score : {{flag.highScore}}
+        </div>
+    </div>
+
+
 </body>
 
 </html>

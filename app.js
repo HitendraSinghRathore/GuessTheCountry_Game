@@ -36,8 +36,8 @@ function flagCtrl() {
         flag.buttonText2 = optionsArray.pop();
         flag.buttonText3 = optionsArray.pop();
         flag.buttonText4 = optionsArray.pop();
-        flag.button1 = function() {
-            if (flag.buttonText1 == flag.correctName) {
+        flag.check = function(option) {
+            if (option == flag.correctName) {
                 flag.response = true;
                 flag.score++;
             } else {
@@ -48,43 +48,5 @@ function flagCtrl() {
             flag.highScore = highScore;
             flag.skipButton = true;
         }
-        flag.button2 = function() {
-            if (flag.buttonText2 == flag.correctName) {
-                flag.response = true;
-                flag.score++;
-            } else {
-                if (flag.score > highScore)
-                    highScore = flag.score;
-                flag.score = 0;
-            }
-            flag.highScore = highScore;
-            flag.skipButton = true;
-        }
-        flag.button3 = function() {
-            if (flag.buttonText3 == flag.correctName) {
-                flag.response = true;
-                flag.score++;
-            } else {
-                if (flag.score > highScore)
-                    highScore = flag.score;
-                flag.score = 0;
-            }
-            flag.highScore = highScore;
-            flag.skipButton = true;
-        }
-        flag.button4 = function() {
-            if (flag.buttonText4 == flag.correctName) {
-                flag.response = true;
-                flag.score++;
-            } else {
-                if (flag.score > highScore)
-                    highScore = flag.score;
-                flag.score = 0;
-            }
-            flag.highScore = highScore;
-            flag.skipButton = true;
-        }
-
     }
-
 }
